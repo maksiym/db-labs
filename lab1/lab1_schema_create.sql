@@ -2,7 +2,7 @@ USE lab1_schema;
 
 
 -- Office
-INSERT INTO office VALUES
+INSERT INTO office(number, city) VALUES
 (1, 'Rivne'),
 (2, 'Kyiv'),
 (3, 'Lviv'),
@@ -15,7 +15,7 @@ INSERT INTO office VALUES
 (10, 'Kherson');
 
 -- Room
-INSERT INTO room VALUES
+INSERT INTO room(number, office_id) VALUES
 (501, 1),
 (503, 2),
 (503, 3),
@@ -28,7 +28,7 @@ INSERT INTO room VALUES
 (907, 8);
 
 -- Workplace
-INSERT INTO workplace VALUES
+INSERT INTO workplace(number, room_id) VALUES
 (11, 1),
 (12, 4),
 (13, 3),
@@ -41,7 +41,7 @@ INSERT INTO workplace VALUES
 (18, 8);
 
 -- Equipment location
-INSERT INTO equipment_location VALUES
+INSERT INTO equipment_location(workplace_id) VALUES
 (1),
 (2),
 (3),
@@ -54,20 +54,20 @@ INSERT INTO equipment_location VALUES
 (10);
 
 -- Initiator 
-INSERT INTO initiator VALUES
+INSERT INTO initiator(name, surname) VALUES
 ('Tolik', 'Sharii'),
-('Jay', 'Z'),
-('Jay', 'O'),
-('Jay', 'V'),
+('Jay', 'A'),
+('Jay', 'B'),
+('Jay', 'C'),
 ('Nazar', 'Bylen'),
 ('Jay', 'Bylen'),
-('Nazar', 'Z'),
+('Nazar', 'Jobhelper'),
 ('Zenoviy', 'Veres'),
 ('Zinoviy', 'Mychuda'),
 ('Zynoviy', 'Nytrebych');
 
 -- Respondent
-INSERT INTO respondent VALUES
+INSERT INTO respondent(name, surname) VALUES
 ('Eminem', 'Bylen'),
 ('Jack', 'Gorobets'),
 ('Anatolii', 'Petrovych'),
@@ -80,7 +80,7 @@ INSERT INTO respondent VALUES
 ('Svyat', 'Must-have');
 
 -- Issue
-INSERT INTO issue VALUES
+INSERT INTO issue(description, equipment_location_id) VALUES
 ('SW-failure', 1),
 ('SW-failure', 2),
 ('SW-failure', 3),
@@ -93,20 +93,20 @@ INSERT INTO issue VALUES
 ('PC-failure', 10);
 
 -- Application
-INSERT INTO application VALUES
-('2022-09-13', 'NEW', 1, 2),
-('2022-09-14', 'NEW', 1, 2),
-('2022-09-15', 'NEW', 1, 2),
-('2022-09-16', 'NEW', 1, 2),
-('2022-08-13', 'NEW', 1, 2),
-('2022-07-13', 'NEW', 1, 2),
-('2022-09-20', 'NEW', 1, 2),
-('2022-09-21', 'NEW', 1, 2),
-('2022-09-23', 'NEW', 1, 2),
-('2022-09-30', 'NEW', 1, 2);
+INSERT INTO application(date, status, issue_id, initiator_id) VALUES
+('2022-09-13', 'NEW', 1, 10),
+('2022-09-14', 'NEW', 2, 1),
+('2022-09-15', 'NEW', 3, 6),
+('2022-09-16', 'NEW', 4, 3),
+('2022-08-13', 'NEW', 5, 4),
+('2022-07-13', 'NEW', 6, 2),
+('2022-09-20', 'NEW', 7, 8),
+('2022-09-21', 'NEW', 8, 7),
+('2022-09-23', 'NEW', 9, 9),
+('2022-09-30', 'NEW', 10, 5);
 
 -- Application respondent
-INSERT INTO application_respondent VALUES
+INSERT INTO application_respondent(application_id, respondent_id) VALUES
 (1, 1),
 (1, 2),
 (1, 3),

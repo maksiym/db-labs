@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `lab3_schema`.`application` (
 
 -- -----------------------------------------------------
 -- Table `lab3_schema`.`respondent`
--- ----------------------------------3-------------------
+-- -----------------------------------------------------
 DROP TABLE IF EXISTS `lab3_schema`.`respondent`;
 CREATE TABLE IF NOT EXISTS `lab3_schema`.`respondent` (
   `id` INT NOT NULL AUTO_INCREMENT,
